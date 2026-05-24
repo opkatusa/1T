@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1T - Text to Image Converter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>1T - Text to Image</h1>
+        <p class="subtitle">텍스트를 이미지로 변환하세요</p>
+        
+        <div class="controls">
+            <!-- 텍스트 입력 -->
+            <div class="control-group">
+                <label for="textInput">텍스트:</label>
+                <textarea id="textInput" placeholder="이미지로 변환할 텍스트를 입력하세요" rows="5"></textarea>
+            </div>
+
+            <!-- 폰트 크기 -->
+            <div class="control-group">
+                <label for="fontSize">폰트 크기: <span id="fontSizeValue">48</span>px</label>
+                <input type="range" id="fontSize" min="12" max="120" value="48">
+            </div>
+
+            <!-- 폰트 선택 -->
+            <div class="control-group">
+                <label for="fontFamily">폰트:</label>
+                <select id="fontFamily">
+                    <option value="Arial">Arial</option>
+                    <option value="Georgia">Georgia</option>
+                    <option value="Courier New">Courier New</option>
+                    <option value="Verdana">Verdana</option>
+                    <option value="Times New Roman">Times New Roman</option>
+                </select>
+            </div>
+
+            <!-- 텍스트 색상 -->
+            <div class="control-group">
+                <label for="textColor">텍스트 색상:</label>
+                <input type="color" id="textColor" value="#000000">
+            </div>
+
+            <!-- 배경 색상 -->
+            <div class="control-group">
+                <label for="bgColor">배경 색상:</label>
+                <input type="color" id="bgColor" value="#ffffff">
+            </div>
+
+            <!-- 버튼들 -->
+            <div class="button-group">
+                <button id="generateBtn" class="btn btn-primary">이미지 생성</button>
+                <button id="downloadBtn" class="btn btn-secondary" disabled>이미지 다운로드</button>
+            </div>
+        </div>
+
+        <!-- 미리보기 -->
+        <div class="preview-section">
+            <h2>미리보기</h2>
+            <canvas id="canvas"></canvas>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
